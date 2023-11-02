@@ -11,7 +11,7 @@ public partial class plugin : EditorPlugin
 	public override void _EnterTree()
 	{
 		// Initialization of the plugin goes here.
-		interfaceContainer =  (Control)GD.Load<PackedScene>("res://addons/Awesome Plugins/Scene/interface.tscn").Instantiate<Control>();
+		interfaceContainer =  (Control)GD.Load<PackedScene>("res://Awesome Plugins/Scene/interface.tscn").Instantiate<Control>();
 		AddControlToBottomPanel(interfaceContainer,"Debug tool");
 	}
 
