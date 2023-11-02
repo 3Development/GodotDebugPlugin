@@ -21,4 +21,4 @@ project/assembly_name="WritePlugins"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Awesome Plugins/plugin.cfg")
+enabled=PackedStringArray()
