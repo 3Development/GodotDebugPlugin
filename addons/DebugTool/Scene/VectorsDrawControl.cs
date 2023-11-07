@@ -190,7 +190,7 @@ public partial class VectorsDrawControl : HBoxContainer
 		{
 			foreach (var vector in _activeVectors)
 			{
-				DebugDraw3D.DrawLine(vector.Origin, vector.Position, new Color(1, 1, 0));
+				//DebugDraw3D.DrawLine(vector.Origin, vector.Position, new Color(1, 1, 0));
 			}
 			
 		};

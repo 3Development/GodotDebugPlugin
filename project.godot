@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WritePlugins"
-run/main_scene="res://DebugTool/Scene/interface.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,4 +21,4 @@ project/assembly_name="WritePlugins"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/DebugTool/plugin.cfg")

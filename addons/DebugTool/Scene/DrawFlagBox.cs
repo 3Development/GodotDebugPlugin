@@ -49,8 +49,8 @@ public partial class DrawFlagBox : VBoxContainer
 		if (Engine.IsEditorHint())
 		{
 			foreach (var field in typeof(DrawFlags).GetFields(BindingFlags.Public
-			                                                           |BindingFlags.Instance
-			                                                           |BindingFlags.NonPublic))
+																	   |BindingFlags.Instance
+																	   |BindingFlags.NonPublic))
 			{
 				CheckBox checkBox = new CheckBox();
 				int state = (int)field.GetValue(DrawState);
