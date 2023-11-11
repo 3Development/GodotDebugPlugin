@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://delg8puljbqmn"]
+[gd_scene load_steps=4 format=3 uid="uid://delg8puljbqmn"]
+
+[ext_resource type="Script" path="res://addons/DebugTool/Scene/InterfaceControl.cs" id="1_vcbb2"]
+[ext_resource type="Script" path="res://addons/DebugTool/Scene/DrawFlagBox.cs" id="2_2s6u4"]
+[ext_resource type="Script" path="res://addons/DebugTool/Scene/VectorsDrawControl.cs" id="3_jnnou"]
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vcbb2")
 
 [node name="DrawFlagBox" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -20,6 +25,7 @@ grow_vertical = 2
 focus_neighbor_top = NodePath("..")
 focus_neighbor_right = NodePath("..")
 focus_neighbor_bottom = NodePath("..")
+script = ExtResource("2_2s6u4")
 
 [node name="Label" type="Label" parent="DrawFlagBox"]
 layout_mode = 2
@@ -45,15 +51,15 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -225.0
-offset_right = 200.0
-offset_bottom = 615.0
+offset_right = 200.4
+offset_bottom = 437.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_jnnou")
 
 [node name="ControlVector" type="VBoxContainer" parent="TabContainer/Vectors/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 size_flags_stretch_ratio = 2.0
 
 [node name="AddNewVectorContainer" type="HBoxContainer" parent="TabContainer/Vectors/HBoxContainer/ControlVector"]
@@ -197,6 +203,35 @@ text = "Change"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+text = "Exit"
+
+[node name="VectorAngleComparison" type="VBoxContainer" parent="TabContainer/Vectors/HBoxContainer/ControlVector"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ChoosedVector" type="Label" parent="TabContainer/Vectors/HBoxContainer/ControlVector/VectorAngleComparison"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.05
+text = "List of vectors and angle between"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Vectors/HBoxContainer/ControlVector/VectorAngleComparison"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Vectors/HBoxContainer/ControlVector/VectorAngleComparison/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomPanel" type="HBoxContainer" parent="TabContainer/Vectors/HBoxContainer/ControlVector/VectorAngleComparison"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="TabContainer/Vectors/HBoxContainer/ControlVector/VectorAngleComparison/BottomPanel"]
+layout_mode = 2
+size_flags_horizontal = 10
 text = "Exit"
 
 [node name="ActiveVectorsContainer" type="VBoxContainer" parent="TabContainer/Vectors/HBoxContainer"]
