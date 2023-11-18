@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://uulxhnj4ckh3"]
+
+[ext_resource type="Script" path="res://PlayerScript.cs" id="1_kl50m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5waa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d05wn"]
+
+[node name="Main" type="Node3D"]
+
+[node name="DebugNode3d" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 15)
+script = ExtResource("1_kl50m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DebugNode3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.978395, 0, 0)
+mesh = SubResource("BoxMesh_e5waa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DebugNode3d"]
+shape = SubResource("BoxShape3D_d05wn")

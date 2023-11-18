@@ -12,10 +12,12 @@ public partial class DrawFlagBox : VBoxContainer
 	{
 		public int Draw { get; set; }
 		public int Freeze { get; set; }
+		
+		public int LivePlay { get; set; }
 	}
 
 
-	public DrawFlags DrawState { get; set; } = new DrawFlags(){Draw = 1,Freeze = 0};
+	public DrawFlags DrawState  = new DrawFlags(){Draw = 1,Freeze = 0,LivePlay = 0};
 	
 	
 	
@@ -59,12 +61,43 @@ public partial class DrawFlagBox : VBoxContainer
 				if (state > 0)
 				{
 					checkBox.SetPressedNoSignal(true);
-					
 				}
+
+				checkBox.Connect("pressed",Callable.From(() =>
+				{
+					OnPressed(checkBox);
+				}));
 				checkBox.Text = name.Substring(name.IndexOf("<")+1, name.IndexOf(">")-1);
 				AddChild(checkBox);
 			}		
 		}
 	
+	}
+
+
+
+	private void OnPressed(CheckBox checkBox)
+	{
+		
+
+		switch (checkBox.Text)
+		{
+			case "Freeze":
+			{
+				DrawState.Freeze = DrawState.Freeze == 1 ? 0 : 1;
+				break;
+			}
+			case "LivePlay":
+			{
+				DrawState.LivePlay = DrawState.LivePlay == 1 ? 0 : 1;
+				break;
+			}
+			case "Draw":
+			{
+				DrawState.Draw = DrawState.Draw == 1 ? 0 : 1;
+				break;
+			}
+				
+		}
 	}
 }

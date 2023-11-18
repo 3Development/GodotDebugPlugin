@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://gho8ikjwbldj"]
+[gd_scene load_steps=4 format=3 uid="uid://gho8ikjwbldj"]
+
+[ext_resource type="Script" path="res://PlayerScript.cs" id="1_0nhjj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5waa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d05wn"]
 
 [node name="Main" type="Node3D"]
+
+[node name="DebugNode3d" type="StaticBody3D" parent="." groups=["DebugNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17174, 0, 0)
+script = ExtResource("1_0nhjj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DebugNode3d"]
+mesh = SubResource("BoxMesh_e5waa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DebugNode3d"]
+shape = SubResource("BoxShape3D_d05wn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0123028, 0.175264, -0.984445, -0.00219013, 0.984522, 0.17525, 0.999922, 0, 0.0124962, 0, 2.35252, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.987161, 0.159726, 1.61443e-08, -0.052289, 0.323163, 0.944898, 0.150925, -0.932766, 0.327366, 6.23437, 5.98748, 0)

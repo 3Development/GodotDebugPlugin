@@ -7,6 +7,14 @@ public delegate void DrawAction();
 public partial class InterfaceControl : Control
 {
 
+	public struct LiveSceneFlags
+	{
+		private bool play = false;
+
+
+		public LiveSceneFlags(){}
+	}
+	
 	private Button _button;
 
 	private DrawFlagBox _drawFlagBox;
